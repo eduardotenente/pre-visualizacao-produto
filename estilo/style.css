@@ -1,10 +1,24 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'FiraSans';
+    src: url(../fontes/Fira_Sans/FiraSans-Black.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'SourceSans';
+    src: url(../fontes/Source_Sans_3/SourceSans3-VariableFont_wght.ttf) format(truetype);
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url(../fontes/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf) format(truetype);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -18,12 +32,17 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 1px 1px 5px 0px #00000042;
-    width: 450px;
+    width: 400px;
     height: 670px;
+
+    display: grid;
+    grid-template: repeat(2, 320px) / repeat(2, 200px);
+    grid-auto-rows: 320px;
+    grid-auto-columns: 200px;
 }
 
 section {
-    background-color: white;
+    background-color: #e4dbd5;
 }
 
 section#imagem {
@@ -31,27 +50,30 @@ section#imagem {
     background-size: cover;
     width: 100%;
     height: 320px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    grid-area: 1 / 1 / 1 / 3;
 }
 
 section#conteudo {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     height: 350px;
+    grid-area: 2 / 1 / 3 / 3;
 }
 
 article.desc {
-
+    
 }
 
 article.cart {
-
+    text-align: center;
 }
 
 h1 {
     padding: 0px 10px 10px 10px;
-
+    font: bolder 2em 'Playfair';
+    
 }
 
 h1#inline {
@@ -60,7 +82,7 @@ h1#inline {
 }
 
 h2 {
-    font-size: 0.9em;
+    font: 100 1em 'FiraSans';
     padding: 15px 10px 10px 10px;
     color: gray;
 }
@@ -72,9 +94,13 @@ h3 {
 p {
     color: gray;
     text-align: center;
+    font: normal 1em 'SourceSans';
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 button {
+    font: bolder 1em 'SourceSans';
     cursor: pointer;
     background-color: rgb(64, 165, 72);
     color: white;
@@ -83,6 +109,6 @@ button {
     border: none;
     border-radius: 10px;
     padding: 10px;
-    width: 200px;
+    width: 350px;
     height: 50px; 
 }
